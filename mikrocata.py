@@ -44,7 +44,7 @@ LISTEN_INTERFACE=("tzsp0")
 
 # Suricata log file
 SELKS_CONTAINER_DATA_SURICATA_LOG="/root/SELKS/docker/containers-data/suricata/logs/"
-FILEPATH = os.path.abspath(SELKS_CONTAINER_DATA_SURICATA_LOG + "alerts.json")
+FILEPATH = os.path.abspath(SELKS_CONTAINER_DATA_SURICATA_LOG + "eve.json")
 
 # Save Mikrotik address lists to a file and reload them on Mikrotik reboot.
 # You can add additional list(s), e.g. [BLOCK_LIST_NAME, "blocklist1", "list2"]
