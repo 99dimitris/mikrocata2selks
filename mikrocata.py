@@ -29,8 +29,22 @@ enable_telegram = False
 TELEGRAM_TOKEN = "TOKEN"
 TELEGRAM_CHATID = "CHATID"
 
+with open("/usr/local/bin/wan.py") as f:
+    exec(f.read())
+
+# If you have dynamic WAN
+ADDRESS_FILE = '/tmp/old_ip_address.txt'
+
+def read_old_ip():
+    f = open(ADDRESS_FILE, 'r')
+    oldIp = f.read()
+    f.close()
+    return oldIp
+
+WAN_IP = read_old_ip()
+
 # You can add your WAN IP, so it doesn't get mistakenly blocked (don't leave empty string)
-WAN_IP = "yourpublicip"
+#WAN_IP = "yourpublicip"
 LOCAL_IP_PREFIX = "192.168."
 WHITELIST_IPS = (WAN_IP, LOCAL_IP_PREFIX, "127.0.0.1", "1.1.1.1", "8.8.8.8")
 COMMENT_TIME_FORMAT = "%-d %b %Y %H:%M:%S.%f"  # See datetime strftime formats.
