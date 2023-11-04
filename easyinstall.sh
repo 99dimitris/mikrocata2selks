@@ -89,6 +89,8 @@ then
         echo "--- Installing Mikrocata and his service ---"
         cp $PATH_GIT_MIKROCATA/mikrocata.py /usr/local/bin/mikrocataTZSP$num.py
         chmod +x /usr/local/bin/mikrocataTZSP$num.py
+        cp $PATH_GIT_MIKROCATA/wan.py /usr/local/bin/wan.py
+        chmod +x /usr/local/bin/wan.py
         sed -i "s/tzsp0/tzsp$num/g" /usr/local/bin/mikrocataTZSP$num.py
         mkdir -p /var/lib/mikrocata
         touch /var/lib/mikrocata/savelists-tzsp$num.json
