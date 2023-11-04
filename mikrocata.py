@@ -111,7 +111,12 @@ def read_json(fpath):
         try:
             with open(fpath, "r") as f:
                 f.seek(last_pos)
-                alerts = [ujson.loads(line) for line in f.readlines()]
+                alerts = []
+                for line in f.readlines():
+                    try:
+                        alerts.append(ujson.loads(line))
+                    except ujson.JSONDecodeError as e:
+                        print(f"JSON decoding error: {e}\nLine: {line}")
                 last_pos = f.tell()
                 return alerts
 
