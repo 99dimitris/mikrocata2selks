@@ -172,7 +172,7 @@ def add_to_tik(alerts):
                                  timeout=TIMEOUT)
 
                 if enable_telegram == True:
-                    print(requests.get(sendTelegram("From: " + wanted_ip + "\nTo: " + src_ip + ":" + wanted_port + "\nRule: " + cmnt)).json())
+                    print(requests.get(sendTelegram("From: " + str(wanted_ip) + "\nTo: " + str(src_ip) + ":" + str(wanted_port) + "\nRule: " + str(cmnt))).json())
 
 
             except librouteros.exceptions.TrapError as e:
